@@ -21,11 +21,6 @@
     [super didMoveToView:view];
     
     /* insert physics world and delgate code */
-    self.physicsWorld.contactDelegate = self;
-    
-    self.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:self.frame];
-    self.physicsBody.categoryBitMask = LHLGameCategoryWorld;
-    self.physicsBody.collisionBitMask = 0;
     
     [self setupLabels];
     [self resetLandscape];
@@ -88,17 +83,6 @@
     self.averageLabel.text = [NSString stringWithFormat:@"%0.1f", (float)self.strokeCount/(float)self.courseCount];
     
     /* Ball-in-hole detection */
-    if (self.ball.struck && integrated < 0.01) {
-        if (CGRectContainsPoint(self.landscape.hole, self.ball.position)) {
-            
-            SKAction *hit = [SKAction playSoundFileNamed:@"yay.wav" waitForCompletion:NO];
-            
-            [self runAction:hit];
-            [self resetLandscape];
-
-        }
-    }
-    
 }
 
 
@@ -127,31 +111,8 @@
 #pragma mark - actions
 
 -(void)strikeBall:(CGVector)vector {
-    
-    SKAction *hit = [SKAction playSoundFileNamed:@"hit.wav" waitForCompletion:NO];
-    
-    [self runAction:hit completion:^{
-        self.ball.struck = YES;
-        self.strokeCount++;
-        [self.ball.physicsBody applyImpulse:vector];
-    }];
     /* insert strike ball code */
 }
 
-
--(void)didBeginContact:(SKPhysicsContact *)contact {
-    
-    int mask = contact.bodyA.categoryBitMask | contact.bodyB.categoryBitMask;
-    
-    if ((mask & LHLGameCategoryBall) && (mask & LHLGameCategoryWorld) && self.ball.struck) {
-        
-        SKAction *hit = [SKAction playSoundFileNamed:@"oob.wav" waitForCompletion:NO];
-        
-        [self runAction:hit completion:^{
-            [self resetBall];
-        }];
-        
-    }
-}
 
 @end

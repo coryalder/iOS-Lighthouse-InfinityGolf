@@ -114,14 +114,6 @@
         _shape.lineWidth = 0.0;
         _shape.fillColor = [UIColor brownColor];
         
-        
-        _shape.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromPath:path.CGPath];
-        _shape.physicsBody.friction = 1.0;
-        _shape.physicsBody.restitution = 0.5;
-        _shape.physicsBody.angularDamping = 1.0;
-        
-        _shape.physicsBody.categoryBitMask = LHLGameCategoryLandscape;
-        _shape.physicsBody.collisionBitMask = 0;
         /* insert landscape physics body code */
     }
     return _shape;

@@ -18,14 +18,6 @@
     ball.fillColor = [UIColor whiteColor];
     ball.lineWidth = 0;
     
-    ball.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:radius];
-    ball.physicsBody.angularDamping = 1.0;
-    ball.physicsBody.friction = 1.0;
-    ball.physicsBody.mass = ball.physicsBody.mass / 2;
-    
-    ball.physicsBody.categoryBitMask = LHLGameCategoryBall;
-    ball.physicsBody.collisionBitMask = LHLGameCategoryLandscape | LHLGameCategoryWorld;
-    ball.physicsBody.contactTestBitMask = LHLGameCategoryWorld | LHLGameCategoryLandscape;
     /* insert ball physics code */
     
     
