@@ -1,0 +1,475 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8B3B2A791A0C567C003BFAFE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B3B2A781A0C567C003BFAFE /* main.m */; };
+		8B3B2A7C1A0C567C003BFAFE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B3B2A7B1A0C567C003BFAFE /* AppDelegate.m */; };
+		8B3B2A7F1A0C567C003BFAFE /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B3B2A7E1A0C567C003BFAFE /* GameScene.m */; };
+		8B3B2A811A0C567C003BFAFE /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8B3B2A801A0C567C003BFAFE /* GameScene.sks */; };
+		8B3B2A841A0C567C003BFAFE /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B3B2A831A0C567C003BFAFE /* GameViewController.m */; };
+		8B3B2A871A0C567C003BFAFE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B3B2A851A0C567C003BFAFE /* Main.storyboard */; };
+		8B3B2A891A0C567C003BFAFE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B3B2A881A0C567C003BFAFE /* Images.xcassets */; };
+		8B3B2A8C1A0C567C003BFAFE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B3B2A8A1A0C567C003BFAFE /* LaunchScreen.xib */; };
+		8B3B2A981A0C567C003BFAFE /* InfinityGolfTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B3B2A971A0C567C003BFAFE /* InfinityGolfTests.m */; };
+		8B3B2AA31A0C571F003BFAFE /* LHLLandscape.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B3B2AA21A0C571F003BFAFE /* LHLLandscape.m */; };
+		8B59F0421A128A83009BD5E2 /* oob.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8B59F03F1A128A83009BD5E2 /* oob.wav */; };
+		8B59F0431A128A83009BD5E2 /* hit.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8B59F0401A128A83009BD5E2 /* hit.wav */; };
+		8B59F0441A128A83009BD5E2 /* yay.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8B59F0411A128A83009BD5E2 /* yay.wav */; };
+		8B9ACBA51A0C776A00744DE0 /* LHLBall.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B9ACBA41A0C776A00744DE0 /* LHLBall.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8B3B2A921A0C567C003BFAFE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8B3B2A6B1A0C567C003BFAFE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8B3B2A721A0C567C003BFAFE;
+			remoteInfo = InfinityGolf;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		8B143C2F1A115B5A00C38F8A /* LHLGameConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LHLGameConstants.h; sourceTree = "<group>"; };
+		8B143C361A11786E00C38F8A /* Tutorial.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Tutorial.txt; sourceTree = "<group>"; };
+		8B3B2A731A0C567C003BFAFE /* InfinityGolf.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InfinityGolf.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B3B2A771A0C567C003BFAFE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8B3B2A781A0C567C003BFAFE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8B3B2A7A1A0C567C003BFAFE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		8B3B2A7B1A0C567C003BFAFE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		8B3B2A7D1A0C567C003BFAFE /* GameScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
+		8B3B2A7E1A0C567C003BFAFE /* GameScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameScene.m; sourceTree = "<group>"; };
+		8B3B2A801A0C567C003BFAFE /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		8B3B2A821A0C567C003BFAFE /* GameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
+		8B3B2A831A0C567C003BFAFE /* GameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
+		8B3B2A861A0C567C003BFAFE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8B3B2A881A0C567C003BFAFE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		8B3B2A8B1A0C567C003BFAFE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		8B3B2A911A0C567C003BFAFE /* InfinityGolfTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InfinityGolfTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B3B2A961A0C567C003BFAFE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8B3B2A971A0C567C003BFAFE /* InfinityGolfTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InfinityGolfTests.m; sourceTree = "<group>"; };
+		8B3B2AA11A0C571F003BFAFE /* LHLLandscape.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHLLandscape.h; sourceTree = "<group>"; };
+		8B3B2AA21A0C571F003BFAFE /* LHLLandscape.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHLLandscape.m; sourceTree = "<group>"; };
+		8B59F03F1A128A83009BD5E2 /* oob.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = oob.wav; sourceTree = "<group>"; };
+		8B59F0401A128A83009BD5E2 /* hit.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = hit.wav; sourceTree = "<group>"; };
+		8B59F0411A128A83009BD5E2 /* yay.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = yay.wav; sourceTree = "<group>"; };
+		8B9ACBA31A0C776A00744DE0 /* LHLBall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LHLBall.h; sourceTree = "<group>"; };
+		8B9ACBA41A0C776A00744DE0 /* LHLBall.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LHLBall.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8B3B2A701A0C567C003BFAFE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8B3B2A8E1A0C567C003BFAFE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8B3B2A6A1A0C567C003BFAFE = {
+			isa = PBXGroup;
+			children = (
+				8B3B2A751A0C567C003BFAFE /* InfinityGolf */,
+				8B3B2A941A0C567C003BFAFE /* InfinityGolfTests */,
+				8B3B2A741A0C567C003BFAFE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8B3B2A741A0C567C003BFAFE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8B3B2A731A0C567C003BFAFE /* InfinityGolf.app */,
+				8B3B2A911A0C567C003BFAFE /* InfinityGolfTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8B3B2A751A0C567C003BFAFE /* InfinityGolf */ = {
+			isa = PBXGroup;
+			children = (
+				8B3B2A7A1A0C567C003BFAFE /* AppDelegate.h */,
+				8B3B2A7B1A0C567C003BFAFE /* AppDelegate.m */,
+				8B3B2A7D1A0C567C003BFAFE /* GameScene.h */,
+				8B3B2A7E1A0C567C003BFAFE /* GameScene.m */,
+				8B3B2A801A0C567C003BFAFE /* GameScene.sks */,
+				8B3B2A821A0C567C003BFAFE /* GameViewController.h */,
+				8B3B2A831A0C567C003BFAFE /* GameViewController.m */,
+				8B3B2AA41A0C5725003BFAFE /* Models */,
+				8B3B2A851A0C567C003BFAFE /* Main.storyboard */,
+				8B3B2A881A0C567C003BFAFE /* Images.xcassets */,
+				8B59F03F1A128A83009BD5E2 /* oob.wav */,
+				8B59F0401A128A83009BD5E2 /* hit.wav */,
+				8B59F0411A128A83009BD5E2 /* yay.wav */,
+				8B3B2A8A1A0C567C003BFAFE /* LaunchScreen.xib */,
+				8B143C361A11786E00C38F8A /* Tutorial.txt */,
+				8B3B2A761A0C567C003BFAFE /* Supporting Files */,
+			);
+			path = InfinityGolf;
+			sourceTree = "<group>";
+		};
+		8B3B2A761A0C567C003BFAFE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8B3B2A771A0C567C003BFAFE /* Info.plist */,
+				8B3B2A781A0C567C003BFAFE /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8B3B2A941A0C567C003BFAFE /* InfinityGolfTests */ = {
+			isa = PBXGroup;
+			children = (
+				8B3B2A971A0C567C003BFAFE /* InfinityGolfTests.m */,
+				8B3B2A951A0C567C003BFAFE /* Supporting Files */,
+			);
+			path = InfinityGolfTests;
+			sourceTree = "<group>";
+		};
+		8B3B2A951A0C567C003BFAFE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8B3B2A961A0C567C003BFAFE /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8B3B2AA41A0C5725003BFAFE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8B143C2F1A115B5A00C38F8A /* LHLGameConstants.h */,
+				8B3B2AA11A0C571F003BFAFE /* LHLLandscape.h */,
+				8B3B2AA21A0C571F003BFAFE /* LHLLandscape.m */,
+				8B9ACBA31A0C776A00744DE0 /* LHLBall.h */,
+				8B9ACBA41A0C776A00744DE0 /* LHLBall.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8B3B2A721A0C567C003BFAFE /* InfinityGolf */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8B3B2A9B1A0C567C003BFAFE /* Build configuration list for PBXNativeTarget "InfinityGolf" */;
+			buildPhases = (
+				8B3B2A6F1A0C567C003BFAFE /* Sources */,
+				8B3B2A701A0C567C003BFAFE /* Frameworks */,
+				8B3B2A711A0C567C003BFAFE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = InfinityGolf;
+			productName = InfinityGolf;
+			productReference = 8B3B2A731A0C567C003BFAFE /* InfinityGolf.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8B3B2A901A0C567C003BFAFE /* InfinityGolfTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8B3B2A9E1A0C567C003BFAFE /* Build configuration list for PBXNativeTarget "InfinityGolfTests" */;
+			buildPhases = (
+				8B3B2A8D1A0C567C003BFAFE /* Sources */,
+				8B3B2A8E1A0C567C003BFAFE /* Frameworks */,
+				8B3B2A8F1A0C567C003BFAFE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8B3B2A931A0C567C003BFAFE /* PBXTargetDependency */,
+			);
+			name = InfinityGolfTests;
+			productName = InfinityGolfTests;
+			productReference = 8B3B2A911A0C567C003BFAFE /* InfinityGolfTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8B3B2A6B1A0C567C003BFAFE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Davander Mobile Corporation";
+				TargetAttributes = {
+					8B3B2A721A0C567C003BFAFE = {
+						CreatedOnToolsVersion = 6.1;
+					};
+					8B3B2A901A0C567C003BFAFE = {
+						CreatedOnToolsVersion = 6.1;
+						TestTargetID = 8B3B2A721A0C567C003BFAFE;
+					};
+				};
+			};
+			buildConfigurationList = 8B3B2A6E1A0C567C003BFAFE /* Build configuration list for PBXProject "InfinityGolf" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8B3B2A6A1A0C567C003BFAFE;
+			productRefGroup = 8B3B2A741A0C567C003BFAFE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8B3B2A721A0C567C003BFAFE /* InfinityGolf */,
+				8B3B2A901A0C567C003BFAFE /* InfinityGolfTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8B3B2A711A0C567C003BFAFE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B3B2A8C1A0C567C003BFAFE /* LaunchScreen.xib in Resources */,
+				8B3B2A891A0C567C003BFAFE /* Images.xcassets in Resources */,
+				8B59F0421A128A83009BD5E2 /* oob.wav in Resources */,
+				8B3B2A811A0C567C003BFAFE /* GameScene.sks in Resources */,
+				8B59F0431A128A83009BD5E2 /* hit.wav in Resources */,
+				8B59F0441A128A83009BD5E2 /* yay.wav in Resources */,
+				8B3B2A871A0C567C003BFAFE /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8B3B2A8F1A0C567C003BFAFE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8B3B2A6F1A0C567C003BFAFE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B3B2A841A0C567C003BFAFE /* GameViewController.m in Sources */,
+				8B9ACBA51A0C776A00744DE0 /* LHLBall.m in Sources */,
+				8B3B2A7C1A0C567C003BFAFE /* AppDelegate.m in Sources */,
+				8B3B2A7F1A0C567C003BFAFE /* GameScene.m in Sources */,
+				8B3B2A791A0C567C003BFAFE /* main.m in Sources */,
+				8B3B2AA31A0C571F003BFAFE /* LHLLandscape.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8B3B2A8D1A0C567C003BFAFE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B3B2A981A0C567C003BFAFE /* InfinityGolfTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8B3B2A931A0C567C003BFAFE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8B3B2A721A0C567C003BFAFE /* InfinityGolf */;
+			targetProxy = 8B3B2A921A0C567C003BFAFE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		8B3B2A851A0C567C003BFAFE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8B3B2A861A0C567C003BFAFE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		8B3B2A8A1A0C567C003BFAFE /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8B3B2A8B1A0C567C003BFAFE /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8B3B2A991A0C567C003BFAFE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		8B3B2A9A1A0C567C003BFAFE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8B3B2A9C1A0C567C003BFAFE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = InfinityGolf/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		8B3B2A9D1A0C567C003BFAFE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = InfinityGolf/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		8B3B2A9F1A0C567C003BFAFE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = InfinityGolfTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/InfinityGolf.app/InfinityGolf";
+			};
+			name = Debug;
+		};
+		8B3B2AA01A0C567C003BFAFE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = InfinityGolfTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/InfinityGolf.app/InfinityGolf";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8B3B2A6E1A0C567C003BFAFE /* Build configuration list for PBXProject "InfinityGolf" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8B3B2A991A0C567C003BFAFE /* Debug */,
+				8B3B2A9A1A0C567C003BFAFE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8B3B2A9B1A0C567C003BFAFE /* Build configuration list for PBXNativeTarget "InfinityGolf" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8B3B2A9C1A0C567C003BFAFE /* Debug */,
+				8B3B2A9D1A0C567C003BFAFE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8B3B2A9E1A0C567C003BFAFE /* Build configuration list for PBXNativeTarget "InfinityGolfTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8B3B2A9F1A0C567C003BFAFE /* Debug */,
+				8B3B2AA01A0C567C003BFAFE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8B3B2A6B1A0C567C003BFAFE /* Project object */;
+}

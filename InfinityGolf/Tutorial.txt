@@ -1,0 +1,119 @@
+
+// insert in the following order:
+
+1. add ball physics body (LHLBall.m -shapeNodeWithCircleOfRadius:atPoint:)
+        Notice ball falls off screen
+
+2. add landscape physics body (LHLLandscape.m -shape)
+        Notice we can't strike the ball
+
+3. add striking ball (GameScene.m -strikeBall)
+        Notice ball is not constrained to the world
+
+4. add world physics body (GameScene.m -didMoveToView:)
+        Notice ball-in-hole detection not working
+
+5. add ball-in-hole detection (GameScene.m - update:)
+        Notice ball never goes "out of bounds"
+
+6. add category constants (ball, landscape, game)
+7. set delegate (GameScene.m -didMoveToView:)
+8. add didBeginContact method
+        Notice the need for feedback about in-game events.
+
+9. Generate exp(losion), tap and yay sounds.
+10. Add sound actions (strikeBall, strikeWall,update:)
+
+
+
+// LHLBall.m
+// - shapeNodeWithCircleOfRadius:atPoint:
+
+// set up physics
+ball.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:radius];
+
+ball.physicsBody.dynamic = YES;
+ball.physicsBody.angularDamping = 1.0;
+ball.physicsBody.friction = 1.0;
+ball.physicsBody.mass = ball.physicsBody.mass/2;
+
+ball.physicsBody.categoryBitMask = LHLGameCategoryBall;
+ball.physicsBody.collisionBitMask = LHLGameCategoryLandscape | LHLGameCategoryWorld;
+ball.physicsBody.contactTestBitMask = LHLGameCategoryLandscape | LHLGameCategoryWorld;
+
+
+// LHLLandscape.m
+// - shape
+
+_shape.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromPath:path.CGPath];
+
+_shape.physicsBody.friction = 1.0;
+_shape.physicsBody.restitution = 0.5;
+_shape.physicsBody.angularDamping = 1.0;
+_shape.physicsBody.categoryBitMask = LHLGameCategoryLandscape;
+_shape.physicsBody.collisionBitMask = 0;
+
+
+// GameScene.m
+// - strikeBall:
+
+SKAction *boop = [SKAction playSoundFileNamed:@"tap.wav" waitForCompletion:NO];
+
+[self.ball runAction:boop completion:^{
+self.ball.struck = YES;
+self.strokeCount++;
+[self.ball.physicsBody applyImpulse:vector];
+}];
+
+// GameScene.m
+// - didMoveToView
+
+
+    self.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:self.frame];
+
+    self.physicsWorld.contactDelegate = self;
+    self.physicsBody.categoryBitMask = LHLGameCategoryWorld;
+
+
+// GameScene.m
+// - update:
+
+CGVector vel = self.ball.physicsBody.velocity;
+CGFloat ball_speed = fabs(vel.dx+vel.dy);
+
+    if (self.ball.struck && (ball_speed < 0.01)) {
+        // ball is stopped.
+        if (CGRectContainsPoint(self.landscape.hole, self.ball.position)) {
+            SKAction *boop = [SKAction playSoundFileNamed:@"yay.wav" waitForCompletion:NO];
+            [self runAction:boop completion:^{
+                [self resetLandscape];
+            }];
+        }
+}
+
+
+// LHLGameConstants.h
+
+typedef NS_OPTIONS(NSUInteger, LHLGameCategory) {
+LHLGameCategoryBall = 1 << 0,
+LHLGameCategoryLandscape = 1 << 1,
+LHLGameCategoryWorld = 1 << 2
+};
+
+
+// GameScene.m
+// -- it's own method
+
+- (void)didBeginContact:(SKPhysicsContact *)contact {
+if ((mask & LHLGameCategoryBall) && (mask & LHLGameCategoryWorld) && self.ball.struck) {
+
+SKAction *boop = [SKAction playSoundFileNamed:@"exp.wav" waitForCompletion:NO];
+
+[self runAction:boop completion:^{
+[self resetBall];
+}];
+}
+}
+
+
+
