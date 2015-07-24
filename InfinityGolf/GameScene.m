@@ -22,9 +22,31 @@
     
     /* insert physics world and delgate code */
     
+    self.physicsWorld.speed = 0.7;
+    
+    self.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:self.frame];
+    
+    self.physicsWorld.contactDelegate = self;
+    self.physicsBody.categoryBitMask = LHLGameCategoryWorld;
+//    
+//    self.physicsBody.collisionBitMask =
+    
     [self setupLabels];
     [self resetLandscape];
 }
+
+
+-(void)didBeginContact:(SKPhysicsContact *)contact {
+    
+    if (contact.bodyA == self.physicsBody || contact.bodyB == self.physicsBody) {
+        [self resetBall];
+    }
+
+    //NSLog(@"Contact between %@ and %@", contact.bodyA, contact.bodyB);
+    
+}
+
+
 
 -(void)setupLabels {
     self.strokeLabel = [SKLabelNode labelNodeWithText:@"0"];
@@ -75,14 +97,29 @@
 
 -(void)update:(CFTimeInterval)currentTime {
     /* Called before each frame is rendered */
-    CGVector vel = self.ball.physicsBody.velocity;
-    CGFloat integrated = fabs(vel.dx+vel.dy);
     
     self.strokeLabel.text = [NSString stringWithFormat:@"%lu", (unsigned long)self.strokeCount];
     self.courseLabel.text = [NSString stringWithFormat:@"%lu", (unsigned long)self.courseCount];
     self.averageLabel.text = [NSString stringWithFormat:@"%0.1f", (float)self.strokeCount/(float)self.courseCount];
     
     /* Ball-in-hole detection */
+    
+    CGVector vel = self.ball.physicsBody.velocity;
+    CGFloat integrated = fabs(vel.dx+vel.dy);
+    
+    if (self.ball.struck && (integrated < 0.01)) {
+        // ball is stopped.
+        if (CGRectContainsPoint(self.landscape.hole, self.ball.position)) {
+            
+            
+            SKAction *boop = [SKAction playSoundFileNamed:@"yay.wav" waitForCompletion:NO];
+            
+            [self runAction:boop completion:^{
+                [self resetLandscape];
+            }];
+        }
+    }
+
 }
 
 
@@ -105,13 +142,22 @@
     
     //CGFloat dist = sqrt((xDist * xDist) + (yDist * yDist)); // check for under max dist. and ignore if it's too weak a shot
     
-    [self strikeBall:(CGVector){-xDist/100, -yDist/100}];
+    [self strikeBall:(CGVector){-xDist/1000, -yDist/1000}];
 }
 
 #pragma mark - actions
 
 -(void)strikeBall:(CGVector)vector {
     /* insert strike ball code */
+    
+    SKAction *boop = [SKAction playSoundFileNamed:@"hit.wav" waitForCompletion:NO];
+    
+    [self.ball runAction:boop completion:^{
+        self.ball.struck = YES;
+        self.strokeCount++;
+        [self.ball.physicsBody applyImpulse:vector];
+    }];
+
 }
 
 

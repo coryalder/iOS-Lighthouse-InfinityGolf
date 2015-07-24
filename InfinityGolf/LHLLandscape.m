@@ -9,7 +9,7 @@
 #import "LHLLandscape.h"
 #import "LHLGameConstants.h"
 
-#define HOLE_WIDTH 20
+#define HOLE_WIDTH 15
 #define HOLE_WIDTH_2 HOLE_WIDTH/2
 
 @implementation LHLLandscape {
@@ -26,6 +26,7 @@
         CGFloat variation = height/10;
         CGFloat segments = 20;
         CGFloat segwidth = width/segments;
+        
         
         // define the starting platform, set self.start to the CGPoint where we're starting.
         
@@ -113,6 +114,18 @@
         _shape = [SKShapeNode shapeNodeWithPath:path.CGPath];
         _shape.lineWidth = 0.0;
         _shape.fillColor = [UIColor brownColor];
+        
+        
+        
+        _shape.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromPath:path.CGPath];
+        
+        _shape.physicsBody.friction = 0.5;
+        _shape.physicsBody.restitution = 0.5;
+        _shape.physicsBody.angularDamping = 1.0;
+        _shape.physicsBody.categoryBitMask = LHLGameCategoryLandscape;
+        _shape.physicsBody.collisionBitMask = 0;
+
+        
         
         /* insert landscape physics body code */
     }

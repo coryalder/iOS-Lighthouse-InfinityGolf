@@ -20,7 +20,18 @@
     
     /* insert ball physics code */
     
+    ball.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:radius];
     
+    
+    ball.physicsBody.categoryBitMask = LHLGameCategoryBall;
+    ball.physicsBody.collisionBitMask = LHLGameCategoryLandscape | LHLGameCategoryWorld;
+    ball.physicsBody.contactTestBitMask = LHLGameCategoryLandscape | LHLGameCategoryWorld;
+    
+    ball.physicsBody.dynamic = YES;
+    ball.physicsBody.angularDamping = 1.0;
+    ball.physicsBody.friction = 1.0;
+    ball.physicsBody.mass = ball.physicsBody.mass/10;
+
     return ball;
 }
 
